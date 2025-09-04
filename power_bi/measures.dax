@@ -1,0 +1,46 @@
+// Average Sector Return
+Avg Sector Return = 
+AVERAGEX(
+    FILTER(
+        stock_summary,
+        stock_summary[Sector] = SELECTEDVALUE(stock_summary[Sector])
+    ),
+    stock_summary[YTD_Return_Pct]
+)
+
+// Market Cap Weighted Average (if you add market cap data)
+Sector Performance = 
+SUMX(
+    FILTER(
+        stock_summary,
+        stock_summary[Sector] = SELECTEDVALUE(stock_summary[Sector])
+    ),
+    stock_summary[YTD_Return_Pct]
+) / COUNTROWS(
+    FILTER(
+        stock_summary,
+        stock_summary[Sector] = SELECTEDVALUE(stock_summary[Sector])
+    )
+)
+
+// Volatility Index
+Sector Volatility = 
+AVERAGEX(
+    FILTER(
+        stock_summary,
+        stock_summary[Sector] = SELECTEDVALUE(stock_summary[Sector])
+    ),
+    stock_summary[Current_Volatility]
+)
+
+// Top Performer
+Top Performer = 
+TOPN(
+    1,
+    FILTER(
+        stock_summary,
+        stock_summary[Sector] = SELECTEDVALUE(stock_summary[Sector])
+    ),
+    stock_summary[YTD_Return_Pct],
+    DESC
+)
