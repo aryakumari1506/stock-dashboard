@@ -1,7 +1,7 @@
 #  Stock Price Trend Dashboard
 
 
-## 🎯 Overview
+##  Overview
 
 This project creates a comprehensive stock market dashboard that provides:
 - **Real-time stock price tracking** across multiple sectors
@@ -193,10 +193,5 @@ SUMX(
 - **Power BI Community** for dashboard inspiration
 - **TA-Lib** for technical analysis indicators
 - **Pandas** for data manipulation capabilities
-
-
-**Built with ❤️ for the trading community**
-
-[Report Bug](https://github.com/yourusername/stock-dashboard/issues) • [Request Feature](https://github.com/yourusername/stock-dashboard/issues) • [View Demo](https://your-demo-link.com)
 
 </div>
